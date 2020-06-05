@@ -1,0 +1,154 @@
+<html>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+	body {margin:0;}
+
+.icon-bar {
+  width: 100%;
+  background-color: #555;
+  overflow: auto;
+}
+
+.icon-bar a {
+  float: left;
+  width: 20%;
+  text-align: center;
+  padding: 12px 0;
+  transition: all 0.3s ease;
+  color: white;
+  font-size: 36px;
+}
+
+.icon-bar a:hover {
+  background-color: #dd54ff;
+}
+
+.active {
+  background-color: #dd54ff;
+}
+@import url('https://fonts.googleapis.com/css?family=Amatic+SC');
+input {
+	border-radius: 2em;
+	outline: none;
+	}
+body {
+	margin: 0;
+	height: 100%;
+	background-image: linear-gradient(to top, #d9afd9 0%, #97d9e1 100%);
+	background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+}
+
+.button_container {
+	position: absolute;
+  left: 0;
+  right: 0;
+  top: 30%;
+}
+
+.description, .link {
+  font-family: 'Amatic SC', cursive;
+  text-align: center;
+}
+
+.description {
+	font-size: 35px;
+}
+
+.btn {
+  border: none;
+  display: block;
+  text-align: center;
+  cursor: pointer;
+  text-transform: uppercase;
+  outline: none;
+  overflow: hidden;
+  position: relative;
+  color: #fff;
+  font-weight: 700;
+  font-size: 15px;
+  background-color: #222;
+  padding: 17px 60px;
+  margin: 0 auto;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.20);
+}
+
+.btn span {
+  position: relative; 
+  z-index: 1;
+}
+
+.btn:after {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 490%;
+  width: 140%;
+  background: #78c7d2;
+  -webkit-transition: all .5s ease-in-out;
+  transition: all .5s ease-in-out;
+  -webkit-transform: translateX(-98%) translateY(-25%) rotate(45deg);
+  transform: translateX(-98%) translateY(-25%) rotate(45deg);
+}
+
+.btn:hover:after {
+  -webkit-transform: translateX(-9%) translateY(-25%) rotate(45deg);
+  transform: translateX(-9%) translateY(-25%) rotate(45deg);
+}
+
+.link {
+  font-size: 20px;
+  margin-top: 30px;
+}
+
+.link a {
+  color: #000;
+  font-size: 25px; 
+}
+
+</style>
+	
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+<body>
+	<div class="icon-bar">
+  <a class="active" href="#"><i class="fa fa-home"></i></a> 
+  <a href="#"><i class="fa fa-search"></i></a> 
+  <a href="webcam.html"><i class="fa fa-camera"></i></a> 
+  <a href="notes.html"><i class="fa fa-edit"></i></a>
+  <a href="https://rainner.github.io/soma-fm-player/"><i class="fa fa-headphones"></i></a> 
+</div>
+	<br>
+	<br>
+	<center>OR TYPE YOUR APP OR WEBSITE IN THE SEARCH BAR BELOW TO OPEN IN A NEW TAB</center>
+	<br>
+	<br>
+<div ng-app="myApp" ng-controller="myCtrl">
+	<br>
+	<br>
+	<br>
+	<br>
+	<center><input ng-model="name"></center>
+	<br>
+	<br>
+	<button class="btn" ng-click="myFunction()"><span>{{name}}</span></button>
+</div>
+	
+	
+<script>
+angular.module('myApp', [])
+  .controller('myCtrl', ['$scope', function($scope) {
+    $scope.myFunction = function() {
+			if($scope.name==='Notes'){
+			window.open('notes.html');
+			}
+			if($scope.name==='Camera'){
+				window.open('webcam.html');
+			}
+    };
+  }]);
+</script>
+
+</body>
+</html>
